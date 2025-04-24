@@ -27,20 +27,6 @@ class TodoManager {
       dueDate: this.todoItemFormatter.formatDueDate(dueDate),
       completed: false,
       status: "pending",
-    };
-    this.todos.push(newTodo);
-    this.saveToLocalStorage();
-    return newTodo;
-  }
-
-  editTodo(id, updatedTask) {
-      const todo = this.todos.find((t) => t.id === id);
-      if (todo) {
-        todo.task = updatedTask;
-        this.saveToLocalStorage();
-      }
-      return todo;
-    }
   
     deleteTodo(id) {
       this.todos = this.todos.filter((todo) => todo.id !== id);
